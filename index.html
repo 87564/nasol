@@ -12,9 +12,18 @@
 
         h1 {
             text-align: center;
-            margin: 20px 0; /* Optional: Adjust margins for spacing */
-            font-size: 2em; /* Optional: Adjust the size of the text */
+            margin: 0;
+            font-size: 1.5em;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 3;
+            padding: 5px;
+            height: 50px; /* Fixed height */
+            line-height: 40px; /* Adjust to balance the padding */
+            box-sizing: border-box; /* Ensure padding is included in the total height */
         }
+
         .grid-container {
             display: grid;
             grid-template-columns: auto; /* Dynamically updated */
@@ -23,14 +32,15 @@
             margin: 0; /* No margin around the grid container */
         }
 
+        /* Adjust column headers to be below the sticky title */
         .header {
             font-weight: bold;
             text-align: center;
             background-color: #f0f0f0;
             padding: 10px;
-            position: sticky; /* Makes the column headers sticky */
-            top: 0; /* Stick to the top when scrolling */
-            z-index: 2; /* Ensures it stays above other elements */
+            position: sticky;
+            top: 50px; /* Set this to match the height of the h1 */
+            z-index: 2;
         }
 
         .row-header {
@@ -72,6 +82,7 @@
 <body>
     <h1>나솔 졸업 앨범 (I Am Solo 'Yearbook')</h1>
     <div id="gridContainer" class="grid-container"></div>
+    <div id="bottomRowHeaders" class="bottom-row-container"></div>
 
     <script>
         // Internal column headers for image placement
