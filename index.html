@@ -8,19 +8,20 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1 {
             text-align: center;
             margin: 0;
-            font-size: 1.3em;
+            font-size: 1.4em;
             position: sticky;
             top: 0;
             background-color: white;
             z-index: 3;
-            padding: 5px;
-            height: 50px; /* Fixed height */
-            line-height: 40px; /* Adjust to balance the padding */
+            height: 60px; /* Fixed height */
+            line-height: 54px; /* Adjust to balance the padding */
             box-sizing: border-box; /* Ensure padding is included in the total height */
         }
 
@@ -39,7 +40,7 @@
             background-color: #f0f0f0;
             padding: 10px;
             position: sticky;
-            top: 50px; /* Set this to match the height of the h1 */
+            top: 60px; /* Set this to match the height of the h1 */
             z-index: 2;
         }
 
@@ -80,7 +81,7 @@
     </style>
 </head>
 <body>
-    <h1>나솔 졸업 앨범 (I Am Solo 'Yearbook')</h1>
+    <h1>나솔 졸업 앨범 (I Am Solo Yearbook)</h1>
     <div id="gridContainer" class="grid-container"></div>
     <div id="bottomRowHeaders" class="bottom-row-container"></div>
 
