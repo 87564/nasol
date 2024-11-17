@@ -5,357 +5,382 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나솔 졸업 앨범 www.nasol.vip</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYR531DNQE">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MYR531DNQE');
-    </script>
-
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            -webkit-font-smoothing: antialiased; 
-            -moz-osx-font-smoothing: grayscale;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-        h1 {
-            text-align: center;
-            margin: 0;
-            font-size: 1.4em;
-            position: sticky;
-            top: 0;
-            background-color: white;
-            z-index: 3;
-            height: 60px; /* Fixed height */
-            line-height: 54px; /* Adjust to balance the padding */
-            box-sizing: border-box; /* Ensure padding is included in the total height */
-        }
+#page-title-container, #page-subtitle-container {
+    position: sticky; /* Ensure they stay on top */
+    background-color: white; /* Solid background to remove transparency */
+    z-index: 3; /* Higher than .header to stay on top */
+    margin: 0; /* Ensure no margin */
+}
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto; /* Dynamically updated */
-            gap: 0px; /* No gap between grid cells */
-            padding: 0; /* No padding around the grid container */
-            margin: 0; /* No margin around the grid container */
-        }
+#page-title-container {
+    top: 0; /* Sticks to the top of the viewport */
+    height: 50px;
+}
 
-        /* Adjust column headers to be below the sticky title */
-        .header {
-            font-weight: bold;
-            text-align: center;
-            background-color: #f0f0f0;
-            padding: 10px;
-            position: sticky;
-            top: 60px; /* Set this to match the height of the h1 */
-            z-index: 2;
-        }
+#page-subtitle-container {
+    top: 50px; /* Stays below the page-title */
+    height: 50px;
+}
 
-        .row-header {
-            font-weight: bold;
-            text-align: right;
-            background-color: #f0f0f0;
-            padding: 10px;
-            position: sticky; /* Makes the row headers sticky */
-            left: 0; /* Stick to the left when scrolling */
-            z-index: 1; /* Ensure it stays above the grid images */
-            display: flex; /* For vertical centering */
-            align-items: center; /* Vertically center the text */
-        }
+#page-title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 1.4em;
+}
 
-        .grid-item {
-            padding: 0; /* No padding inside the grid cells */
-            margin: 0; /* No margin inside the grid cells */
-        }
+#page-subtitle {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
 
-        .grid-container img {
-            width: 100%;
-            height: 100%; /* Ensure images take full height of the grid cell */
-            margin: 0; /* No margin around the images */
-            object-fit: cover; /* Ensure the image covers the grid cell without white space */
-        }
+.grid-container {
+    display: grid;
+    grid-template-columns: auto; /* Dynamically updated */
+    gap: 0px; /* No gap between grid cells */
+    padding: 0; /* No padding around the grid container */
+    margin: 0; /* No margin around the grid container */
+}
 
-        @media (max-width: 600px) {
-            /* Adjustments for small screens */
-            .header, .row-header {
-                padding: 5px; /* Reduce header padding for smaller screens */
-            }
+/* Adjust column headers to stay below the sticky title and subtitle */
+.header {
+    position: sticky;
+    background-color: #f0f0f0;
+    top: 100px; /* Below both title and subtitle */
+    z-index: 2; /* Lower than title and subtitle */
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+/*    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); /* Optional for better separation */
+}
 
-            .grid-container img {
-                margin: 0; /* Ensure no margin on small screens */
-            }
-        }
+.row-header {
+    font-weight: bold;
+    text-align: right;
+    background-color: #f0f0f0;
+    padding: 10px;
+    position: sticky; /* Makes the row headers sticky */
+    left: 0; /* Stick to the left when scrolling */
+    z-index: 1; /* Ensure it stays above the grid images */
+    display: flex; /* For vertical centering */
+    align-items: center; /* Vertically center the text */
+/*    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Optional for better separation */
+}
+
+.grid-item {
+    padding: 0; /* No padding inside the grid cells */
+    margin: 0; /* No margin inside the grid cells */
+}
+
+.grid-container img {
+    width: 100%;
+    height: 100%; /* Ensure images take full height of the grid cell */
+    margin: 0; /* No margin around the images */
+    object-fit: cover; /* Ensure the image covers the grid cell without white space */
+}
+
+@media (max-width: 600px) {
+    /* Adjustments for small screens */
+    .header, .row-header {
+        padding: 5px; /* Reduce header padding for smaller screens */
+    }
+
+    .grid-container img {
+        margin: 0; /* Ensure no margin on small screens */
+    }
+}
+
     </style>
 </head>
 <body>
-    <h1>나솔 졸업 앨범 (I Am Solo Yearbook)</h1>
+    <div id="page-title-container">
+        <div id="page-title">나솔 졸업 앨범 (I Am Solo Yearbook)</div>
+    </div>
+    <div id="page-subtitle-container">
+        <div id="page-subtitle">나는 솔로 전 기수 출연자 사진 모음
+        (Photos of I Am Solo Participants)</div>
+    </div>
     <div id="gridContainer" class="grid-container"></div>
     <div id="bottomRowHeaders" class="bottom-row-container"></div>
 
-    <script>
-        // Internal column headers for image placement
-        const columnHeaders = [
-            'yeongsu',
-            'yeongho',
-            'yeongsik',
-            'yeongcheol',
-            'gwangsu',
-            'sangcheol',
-            'gyeongsu',
-            'jeongsu',
-            'jeongsik',
-            'jongsu',
-            'yeongsuk',
-            'jeongsuk',
-            'sunja',
-            'yeongja',
-            'oksun',
-            'hyeonsuk',
-            'jeonghui',
-            'jeongsun',
-            'jeongja',
-            'yeongsun',
-        ];
+<script>
+    // Google Tag Manager (gtag.js)
+    (function() {
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-MYR531DNQE";
+        document.head.appendChild(gtagScript);
 
-        // Display names for the column headers (in Korean)
-        const columnDisplayNames = [
-            '영수',
-            '영호',
-            '영식',
-            '영철',
-            '광수',
-            '상철',
-            '경수',
-            '정수',
-            '정식',
-            '종수',
-            '영숙',
-            '정숙',
-            '순자',
-            '영자',
-            '옥순',
-            '현숙',
-            '정희',
-            '정순',
-            '정자',
-            '영순',
-        ];
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MYR531DNQE');
+    })();
+    // Internal column headers for image placement
+    const columnHeaders = [
+        'yeongsu',
+        'yeongho',
+        'yeongsik',
+        'yeongcheol',
+        'gwangsu',
+        'sangcheol',
+        'gyeongsu',
+        'jeongsu',
+        'jeongsik',
+        'jongsu',
+        'yeongsuk',
+        'jeongsuk',
+        'sunja',
+        'yeongja',
+        'oksun',
+        'hyeonsuk',
+        'jeonghui',
+        'jeongsun',
+        'jeongja',
+        'yeongsun',
+    ];
 
-        // Internal row headers for image placement
-        const rowHeaders = Array.from({ length: 22 }, (_, i) => (i + 1).toString()).reverse();
+    // Display names for the column headers (in Korean)
+    const columnDisplayNames = [
+        '영수',
+        '영호',
+        '영식',
+        '영철',
+        '광수',
+        '상철',
+        '경수',
+        '정수',
+        '정식',
+        '종수',
+        '영숙',
+        '정숙',
+        '순자',
+        '영자',
+        '옥순',
+        '현숙',
+        '정희',
+        '정순',
+        '정자',
+        '영순',
+    ];
 
-        // Display names for row headers in Korean ("1기", "2기", etc.), reversed
-        const rowDisplayNames = rowHeaders.map(element => element + '기');
+    // Internal row headers for image placement
+    const rowHeaders = Array.from({ length: 22 }, (_, i) => (i + 1).toString()).reverse();
+    const rowDisplayNames = rowHeaders.map(element => element + '기');
 
-        // List of image filenames with .png extension added
-        const imageFilenames = [
-            '1_yeongsu', '1_yeongho', 
-            '1_yeongsik', '1_yeongcheol',
-            '1_jeongsu', '1_jongsu',
-            '1_jeongsik',
-            '1_sunja', '1_yeongja',
-            '1_jeongsuk', '1_jeongsun',
-            '1_yeongsuk', '1_yeongsun',
-            '1_jeongja',
-            '2_yeongsu','2_yeongho', 
-            '2_yeongsik', '2_yeongcheol',
-            '2_jeongsu', '2_jongsu',
-            '2_sunja', '2_yeongja',
-            '2_jeongsun', '2_jeongsuk',
-            '2_yeongsuk',
-            '3_yeongsu', '3_yeongho',
-            '3_yeongsik', '3_yeongcheol',
-            '3_jeongsu', '3_jongsu',
-            '3_jeongsik',
-            '3_sunja', '3_yeongja', 
-            '3_jeongsun', '3_jeongsuk',
-            '3_yeongsuk', '3_jeongja',
-            '4_yeongsu', '4_yeongho',
-            '4_yeongsik', '4_yeongcheol',
-            '4_jeongsu', '4_jeongsik',
-            '4_sunja', '4_yeongja', 
-            '4_jeongsun', '4_jeongsuk',
-            '4_yeongsuk', '4_jeongja',
-            '5_yeongsu', '5_yeongho',
-            '5_yeongsik', '5_yeongcheol',
-            '5_jeongsu', '5_jeongsik',
-            '5_sunja', '5_yeongja',
-            '5_jeongsun', '5_jeongsuk',
-            '5_yeongsuk', '5_jeongja',
-            '6_yeongsu', '6_yeongho',
-            '6_yeongsik', '6_yeongcheol',
-            '6_gwangsu', '6_sangcheol',
-            '6_yeongsuk', '6_jeongsuk',
-            '6_sunja', '6_yeongja',
-            '6_oksun', '6_hyeonsuk',
-            '7_yeongsu', '7_yeongho',
-            '7_yeongsik', '7_yeongcheol',
-            '7_gwangsu', '7_sangcheol',
-            '7_gyeongsu',
-            '7_yeongsuk', '7_jeongsuk',
-            '7_sunja', '7_yeongja',
-            '7_oksun',
-            '8_yeongsu', '8_yeongho',
-            '8_yeongsik', '8_yeongcheol',
-            '8_gwangsu', '8_sangcheol',
-            '8_yeongsuk', '8_jeongsuk',
-            '8_sunja', '8_yeongja',
-            '8_oksun', '8_hyeonsuk',
-            '9_yeongsu', '9_yeongho',
-            '9_yeongsik', '9_yeongcheol',
-            '9_gwangsu', '9_sangcheol',
-            '9_yeongsuk', '9_jeongsuk',
-            '9_sunja', '9_yeongja',
-            '9_oksun', '9_hyeonsuk',
-            '10_yeongsu', '10_yeongho',
-            '10_yeongsik', '10_yeongcheol',
-            '10_gwangsu', '10_sangcheol',
-            '10_yeongsuk', '10_jeongsuk',
-            '10_sunja', '10_yeongja',
-            '10_oksun', '10_hyeonsuk',
-            '11_yeongsu', '11_yeongho',
-            '11_yeongsik', '11_yeongcheol',
-            '11_gwangsu', '11_sangcheol',
-            '11_yeongsuk', '11_jeongsuk',
-            '11_sunja', '11_yeongja',
-            '11_oksun', '11_hyeonsuk',
-            '12_yeongsu', '12_yeongho',
-            '12_yeongsik', '12_yeongcheol',
-            '12_gwangsu', '12_sangcheol',
-            '12_yeongsuk', '12_jeongsuk',
-            '12_sunja', '12_yeongja',
-            '12_oksun', '12_hyeonsuk',
-            '13_yeongsu', '13_yeongho',
-            '13_yeongsik', '13_yeongcheol',
-            '13_gwangsu', '13_sangcheol',
-            '13_yeongsuk', '13_jeongsuk',
-            '13_sunja', '13_yeongja',
-            '13_oksun', '13_hyeonsuk',
-            '14_yeongsu', '14_yeongho',
-            '14_yeongsik', '14_yeongcheol',
-            '14_gwangsu', '14_sangcheol',
-            '14_gyeongsu',
-            '14_yeongsuk', '14_jeongsuk',
-            '14_sunja', '14_yeongja',
-            '14_oksun', '14_hyeonsuk',
-            '15_yeongsu', '15_yeongho',
-            '15_yeongsik', '15_yeongcheol',
-            '15_gwangsu', '15_sangcheol',
-            '15_yeongsuk', '15_jeongsuk',
-            '15_sunja', '15_yeongja',
-            '15_oksun', '15_hyeonsuk',
-            '16_yeongsu', '16_yeongho',
-            '16_yeongsik', '16_yeongcheol',
-            '16_gwangsu', '16_sangcheol',
-            '16_yeongsuk', '16_jeongsuk',
-            '16_sunja', '16_yeongja',
-            '16_oksun', '16_hyeonsuk',
-            '17_yeongsu', '17_yeongho',
-            '17_yeongsik', '17_yeongcheol',
-            '17_gwangsu', '17_sangcheol',
-            '17_yeongsuk', '17_jeongsuk',
-            '17_sunja', '17_yeongja',
-            '17_oksun', '17_hyeonsuk',
-            '18_yeongsu', '18_yeongho',
-            '18_yeongsik', '18_yeongcheol',
-            '18_gwangsu', '18_sangcheol',
-            '18_yeongsuk', '18_jeongsuk',
-            '18_sunja', '18_yeongja',
-            '18_oksun', '18_hyeonsuk',
-            '19_yeongsu', '19_yeongho',
-            '19_yeongsik', '19_yeongcheol',
-            '19_gwangsu', '19_sangcheol',
-            '19_yeongsuk', '19_jeongsuk',
-            '19_sunja', '19_yeongja',
-            '19_oksun', '19_hyeonsuk',
-            '20_yeongsu', '20_yeongho',
-            '20_yeongsik', '20_yeongcheol',
-            '20_gwangsu', '20_sangcheol',
-            '20_yeongsuk', '20_jeongsuk',
-            '20_sunja', '20_yeongja',
-            '20_oksun', '20_hyeonsuk',
-            '21_yeongsu', '21_yeongho',
-            '21_yeongsik', '21_yeongcheol',
-            '21_gwangsu', '21_sangcheol',
-            '21_yeongsuk', '21_jeongsuk',
-            '21_sunja', '21_yeongja',
-            '21_oksun', '21_hyeonsuk',
-            '22_yeongsu', '22_yeongho',
-            '22_yeongsik', '22_yeongcheol',
-            '22_gwangsu', '22_sangcheol',
-            '22_gyeongsu',
-            '22_yeongsuk', '22_jeongsuk',
-            '22_sunja', '22_yeongja',
-            '22_oksun', '22_hyeonsuk',
-            '22_jeonghui',
-        ].map(filename => filename + '.png');
+    // List of image filenames with .png extension added
+    const imageFilenames = [
+        '1_yeongsu', '1_yeongho', 
+        '1_yeongsik', '1_yeongcheol',
+        '1_jeongsu', '1_jongsu',
+        '1_jeongsik',
+        '1_sunja', '1_yeongja',
+        '1_jeongsuk', '1_jeongsun',
+        '1_yeongsuk', '1_yeongsun',
+        '1_jeongja',
+        '2_yeongsu','2_yeongho', 
+        '2_yeongsik', '2_yeongcheol',
+        '2_jeongsu', '2_jongsu',
+        '2_sunja', '2_yeongja',
+        '2_jeongsun', '2_jeongsuk',
+        '2_yeongsuk',
+        '3_yeongsu', '3_yeongho',
+        '3_yeongsik', '3_yeongcheol',
+        '3_jeongsu', '3_jongsu',
+        '3_jeongsik',
+        '3_sunja', '3_yeongja', 
+        '3_jeongsun', '3_jeongsuk',
+        '3_yeongsuk', '3_jeongja',
+        '4_yeongsu', '4_yeongho',
+        '4_yeongsik', '4_yeongcheol',
+        '4_jeongsu', '4_jeongsik',
+        '4_sunja', '4_yeongja', 
+        '4_jeongsun', '4_jeongsuk',
+        '4_yeongsuk', '4_jeongja',
+        '5_yeongsu', '5_yeongho',
+        '5_yeongsik', '5_yeongcheol',
+        '5_jeongsu', '5_jeongsik',
+        '5_sunja', '5_yeongja',
+        '5_jeongsun', '5_jeongsuk',
+        '5_yeongsuk', '5_jeongja',
+        '6_yeongsu', '6_yeongho',
+        '6_yeongsik', '6_yeongcheol',
+        '6_gwangsu', '6_sangcheol',
+        '6_yeongsuk', '6_jeongsuk',
+        '6_sunja', '6_yeongja',
+        '6_oksun', '6_hyeonsuk',
+        '7_yeongsu', '7_yeongho',
+        '7_yeongsik', '7_yeongcheol',
+        '7_gwangsu', '7_sangcheol',
+        '7_gyeongsu',
+        '7_yeongsuk', '7_jeongsuk',
+        '7_sunja', '7_yeongja',
+        '7_oksun',
+        '8_yeongsu', '8_yeongho',
+        '8_yeongsik', '8_yeongcheol',
+        '8_gwangsu', '8_sangcheol',
+        '8_yeongsuk', '8_jeongsuk',
+        '8_sunja', '8_yeongja',
+        '8_oksun', '8_hyeonsuk',
+        '9_yeongsu', '9_yeongho',
+        '9_yeongsik', '9_yeongcheol',
+        '9_gwangsu', '9_sangcheol',
+        '9_yeongsuk', '9_jeongsuk',
+        '9_sunja', '9_yeongja',
+        '9_oksun', '9_hyeonsuk',
+        '10_yeongsu', '10_yeongho',
+        '10_yeongsik', '10_yeongcheol',
+        '10_gwangsu', '10_sangcheol',
+        '10_yeongsuk', '10_jeongsuk',
+        '10_sunja', '10_yeongja',
+        '10_oksun', '10_hyeonsuk',
+        '11_yeongsu', '11_yeongho',
+        '11_yeongsik', '11_yeongcheol',
+        '11_gwangsu', '11_sangcheol',
+        '11_yeongsuk', '11_jeongsuk',
+        '11_sunja', '11_yeongja',
+        '11_oksun', '11_hyeonsuk',
+        '12_yeongsu', '12_yeongho',
+        '12_yeongsik', '12_yeongcheol',
+        '12_gwangsu', '12_sangcheol',
+        '12_yeongsuk', '12_jeongsuk',
+        '12_sunja', '12_yeongja',
+        '12_oksun', '12_hyeonsuk',
+        '13_yeongsu', '13_yeongho',
+        '13_yeongsik', '13_yeongcheol',
+        '13_gwangsu', '13_sangcheol',
+        '13_yeongsuk', '13_jeongsuk',
+        '13_sunja', '13_yeongja',
+        '13_oksun', '13_hyeonsuk',
+        '14_yeongsu', '14_yeongho',
+        '14_yeongsik', '14_yeongcheol',
+        '14_gwangsu', '14_sangcheol',
+        '14_gyeongsu',
+        '14_yeongsuk', '14_jeongsuk',
+        '14_sunja', '14_yeongja',
+        '14_oksun', '14_hyeonsuk',
+        '15_yeongsu', '15_yeongho',
+        '15_yeongsik', '15_yeongcheol',
+        '15_gwangsu', '15_sangcheol',
+        '15_yeongsuk', '15_jeongsuk',
+        '15_sunja', '15_yeongja',
+        '15_oksun', '15_hyeonsuk',
+        '16_yeongsu', '16_yeongho',
+        '16_yeongsik', '16_yeongcheol',
+        '16_gwangsu', '16_sangcheol',
+        '16_yeongsuk', '16_jeongsuk',
+        '16_sunja', '16_yeongja',
+        '16_oksun', '16_hyeonsuk',
+        '17_yeongsu', '17_yeongho',
+        '17_yeongsik', '17_yeongcheol',
+        '17_gwangsu', '17_sangcheol',
+        '17_yeongsuk', '17_jeongsuk',
+        '17_sunja', '17_yeongja',
+        '17_oksun', '17_hyeonsuk',
+        '18_yeongsu', '18_yeongho',
+        '18_yeongsik', '18_yeongcheol',
+        '18_gwangsu', '18_sangcheol',
+        '18_yeongsuk', '18_jeongsuk',
+        '18_sunja', '18_yeongja',
+        '18_oksun', '18_hyeonsuk',
+        '19_yeongsu', '19_yeongho',
+        '19_yeongsik', '19_yeongcheol',
+        '19_gwangsu', '19_sangcheol',
+        '19_yeongsuk', '19_jeongsuk',
+        '19_sunja', '19_yeongja',
+        '19_oksun', '19_hyeonsuk',
+        '20_yeongsu', '20_yeongho',
+        '20_yeongsik', '20_yeongcheol',
+        '20_gwangsu', '20_sangcheol',
+        '20_yeongsuk', '20_jeongsuk',
+        '20_sunja', '20_yeongja',
+        '20_oksun', '20_hyeonsuk',
+        '21_yeongsu', '21_yeongho',
+        '21_yeongsik', '21_yeongcheol',
+        '21_gwangsu', '21_sangcheol',
+        '21_yeongsuk', '21_jeongsuk',
+        '21_sunja', '21_yeongja',
+        '21_oksun', '21_hyeonsuk',
+        '22_yeongsu', '22_yeongho',
+        '22_yeongsik', '22_yeongcheol',
+        '22_gwangsu', '22_sangcheol',
+        '22_gyeongsu',
+        '22_yeongsuk', '22_jeongsuk',
+        '22_sunja', '22_yeongja',
+        '22_oksun', '22_hyeonsuk',
+        '22_jeonghui',
+    ].map(filename => filename + '.png');
+    
+    // Get the grid container element
+    const gridContainer = document.getElementById('gridContainer');
 
-        // Get the grid container element
-        const gridContainer = document.getElementById('gridContainer');
+    // Set the grid template dynamically based on the number of columns
+    gridContainer.style.gridTemplateColumns = `auto repeat(${columnHeaders.length}, 1fr)`;
 
-        // Set the grid template dynamically based on the number of columns
-        gridContainer.style.gridTemplateColumns = `auto repeat(${columnHeaders.length}, 1fr)`;
+    // Create the top-left empty corner (top-left corner cell)
+    const cornerCell = document.createElement('div');
+    cornerCell.classList.add('header');
+    gridContainer.appendChild(cornerCell);
 
-        // Create the top-left empty corner (top-left corner cell)
-        const cornerCell = document.createElement('div');
-        cornerCell.classList.add('header');
-        gridContainer.appendChild(cornerCell);
+    // Create column headers dynamically using display names (Korean)
+    columnDisplayNames.forEach(displayName => {
+        const colHeader = document.createElement('div');
+        colHeader.classList.add('header');
+        colHeader.textContent = displayName;
+        gridContainer.appendChild(colHeader);
+    });
 
-        // Create column headers dynamically using display names (Korean)
-        columnDisplayNames.forEach(displayName => {
-            const colHeader = document.createElement('div');
-            colHeader.classList.add('header');
-            colHeader.textContent = displayName;
-            gridContainer.appendChild(colHeader);
+    // Create row headers and placeholders for grid cells
+    rowHeaders.forEach((rowHeader, rowIndex) => {
+        const rowHeaderElement = document.createElement('div');
+        rowHeaderElement.classList.add('row-header');
+        rowHeaderElement.textContent = rowDisplayNames[rowIndex]; // Display "1기", "2기", etc.
+        gridContainer.appendChild(rowHeaderElement);
+
+        columnHeaders.forEach(() => {
+            const gridItem = document.createElement('div');
+            gridItem.classList.add('grid-item');
+            gridContainer.appendChild(gridItem);
         });
+    });
 
-        // Create row headers and placeholders for grid cells
-        rowHeaders.forEach((rowHeader, rowIndex) => {
-            const rowHeaderElement = document.createElement('div');
-            rowHeaderElement.classList.add('row-header');
-            rowHeaderElement.textContent = rowDisplayNames[rowIndex]; // Display "1기", "2기", etc.
-            gridContainer.appendChild(rowHeaderElement);
+    // Place images in the correct grid cells based on the filename
+    imageFilenames.forEach(filename => {
+        // Extract the row number and the name part from the filename
+        const rowMatch = filename.match(/\d+/); // Extract row number
+        const colMatch = filename.match(/_(\w+)\.png/); // Extract name
 
-            columnHeaders.forEach(() => {
-                const gridItem = document.createElement('div');
-                gridItem.classList.add('grid-item');
-                gridContainer.appendChild(gridItem);
-            });
-        });
+        if (rowMatch && colMatch) {
+            const row = rowMatch[0]; // Extract row number
+            const col = colMatch[1]; // Extract name like 'yeongsu'
 
-        // Place images in the correct grid cells based on the filename
-        imageFilenames.forEach(filename => {
-            // Extract the row number and the name part from the filename
-            const rowMatch = filename.match(/\d+/); // Extract row number
-            const colMatch = filename.match(/_(\w+)\.png/); // Extract name
+            const rowIndex = rowHeaders.indexOf(row); // Get the row index
+            const colIndex = columnHeaders.indexOf(col); // Get the column index (based on internal names)
 
-            if (rowMatch && colMatch) {
-                const row = rowMatch[0]; // Extract row number
-                const col = colMatch[1]; // Extract name like 'yeongsu'
+            if (rowIndex !== -1 && colIndex !== -1) {
+                // Calculate the correct position in the grid
+                const gridPosition = (rowIndex + 1) * (columnHeaders.length + 1) + (colIndex + 1);
 
-                const rowIndex = rowHeaders.indexOf(row); // Get the row index
-                const colIndex = columnHeaders.indexOf(col); // Get the column index (based on internal names)
+                // Get the correct grid cell
+                const gridItem = gridContainer.children[gridPosition];
 
-                if (rowIndex !== -1 && colIndex !== -1) {
-                    // Calculate the correct position in the grid
-                    const gridPosition = (rowIndex + 1) * (columnHeaders.length + 1) + (colIndex + 1);
-
-                    // Get the correct grid cell
-                    const gridItem = gridContainer.children[gridPosition];
-
-                    // Create the image element and append it to the correct grid item
-                    const imgElement = document.createElement('img');
-                    imgElement.src = filename;
-                    imgElement.alt = `Image ${col}${row}`;
-                    gridItem.appendChild(imgElement);
-                }
+                // Create the image element and append it to the correct grid item
+                const imgElement = document.createElement('img');
+                imgElement.src = filename;
+                imgElement.alt = `Image ${col}${row}`;
+                gridItem.appendChild(imgElement);
             }
-        });
-    </script>
+        }
+    });
+</script>
 </body>
 </html>
