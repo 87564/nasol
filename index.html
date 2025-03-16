@@ -174,11 +174,6 @@ body {
         '정자',
         '영순',
     ];
-
-    // Internal row headers for image placement
-    const rowHeaders = Array.from({ length: 23 }, (_, i) => (i + 1).toString()).reverse();
-    const rowDisplayNames = rowHeaders.map(element => element + '기');
-
     // List of image filenames with .webp extension added
     const imageFilenames = [
         '1_yeongsu', '1_yeongho', 
@@ -340,6 +335,11 @@ body {
         '25_hyeonsuk', '25_migyeong',
     ].map(filename => `img/${filename}.webp`);
     
+    // Internal row headers for image placement
+    const highestRowNumber = Math.max(...imageFilenames.map(f => parseInt(f.match(/^(\d+)_/)?.[1] || 0)));
+    const rowHeaders = Array.from({ length: highestRowNumber }, (_, i) => (i + 1).toString()).reverse();
+    const rowDisplayNames = rowHeaders.map(element => element + '기');
+
     // Get the grid container element
     const gridContainer = document.getElementById('gridContainer');
 
